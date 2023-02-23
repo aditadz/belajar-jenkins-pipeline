@@ -6,13 +6,29 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'my first pipeline kiww'
+                echo 'Building Maven Apps'
             }
         }
     }
 
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing Maven Apps'
+            }
+        }
+    }
+
+    stages {
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Maven Apps'
+            }
+        }
+    }
+    
     post {
         always {
             echo "always say hello to you"

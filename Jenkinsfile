@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Maven Apps'
+                sleep(5)
                 echo 'Building Maven Apps 2'
                 echo 'Building Maven Apps 3'
             }
@@ -16,6 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Maven Apps'
+                sleep(5)
                 echo 'Testing Maven Apps 2'
                 echo 'Testing Maven Apps 3'
                // sh 'error'
@@ -24,6 +26,7 @@ pipeline {
          stage('Deploy') {
             steps {
                 echo 'Deploying Maven Apps'
+                sleep(5)
                 echo 'Deploying Maven Apps 2'
                 echo 'Deploying Maven Apps 3'
                 

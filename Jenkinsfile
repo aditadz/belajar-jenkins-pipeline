@@ -9,17 +9,24 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Maven Apps'
+                echo 'Building Maven Apps 2'
+                echo 'Building Maven Apps 3'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing Maven Apps'
-                sh 'error'
+                echo 'Testing Maven Apps 2'
+                echo 'Testing Maven Apps 3'
+               // sh 'error'
             }
         }
          stage('Deploy') {
             steps {
                 echo 'Deploying Maven Apps'
+                echo 'Deploying Maven Apps 2'
+                echo 'Deploying Maven Apps 3'
+                
             }
         }
     }

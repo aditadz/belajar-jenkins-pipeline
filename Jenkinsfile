@@ -12,4 +12,19 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo "always say hello to you"
+        }
+        success {
+            echo "berhasil nih ngab"
+        }
+        failure{
+            echo "yahh gagal, kenapa tuh?"
+        }
+        cleanup{
+            echo "bersih bersih"
+        }
+    }
 }

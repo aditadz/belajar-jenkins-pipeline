@@ -14,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Maven Apps'
+                sh 'error'
             }
         }
          stage('Deploy') {

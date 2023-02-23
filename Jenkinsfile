@@ -11,23 +11,18 @@ pipeline {
                 echo 'Building Maven Apps'
             }
         }
-    }
-
-    stages {
         stage('Test') {
             steps {
                 echo 'Testing Maven Apps'
             }
         }
-    }
-
-    stages {
-        stage('Deploy') {
+         stage('Deploy') {
             steps {
                 echo 'Deploying Maven Apps'
             }
         }
     }
+
     
     post {
         always {

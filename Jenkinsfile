@@ -8,19 +8,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building Maven Apps'
-                sleep(5)
-                echo 'Building Maven Apps 2'
-                echo 'Building Maven Apps 3'
+                echo 'Start Build'
+                sh './mvnw clean compile test-compile'
+                echo 'Finish Build'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing Maven Apps'
-                sleep(5)
-                echo 'Testing Maven Apps 2'
-                echo 'Testing Maven Apps 3'
-               // sh 'error'
+                echo 'Start Test'
+                sh './mvnw test'
+                echo 'Finish Test'
             }
         }
          stage('Deploy') {

@@ -11,10 +11,10 @@ pipeline {
         EMAIL = "aditazis.id@gmail.com "
     }
 
-    options {
-        disableConcurrentBuilds()
-        timeout(time: 10, unit: 'MINUTES')
-    }
+    // options {
+    //     disableConcurrentBuilds()
+    //     timeout(time: 10, unit: 'MINUTES')
+    // }
 
     stages {
 

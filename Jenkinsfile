@@ -11,6 +11,11 @@ pipeline {
         EMAIL = "aditazis.id@gmail.com "
     }
 
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTE')
+    }
+
     stages {
 
         stage('Prepare') {

@@ -11,12 +11,38 @@ pipeline {
         EMAIL = "aditazis.id@gmail.com "
     }
 
+    parameters {
+        string(name: "NAME", defaultValue: "Guest", description: "what is your name?")
+        text(name: "DESCRIPTION", defaultValue: "Guest", description: "desc you please ")
+        booleanParam(name: "DEPLOY", defaultValue: false, description: "need to deploy?")
+        choice(name: "SLAVE", choices: ['Kube', 'Swarm', 'On-Premise'], description: "which place to deploy?")
+        password(name: "SECRET", defaultValue: "Guest", description: "encrypt key")
+
+    }
+
     options {
         disableConcurrentBuilds()
         timeout(time: 10, unit: 'MINUTES')
     }
 
     stages {
+
+        stage('Parameter') {
+             agent {
+                 node {
+                    label "linux && java11"
+                  }
+              }
+
+            steps {
+                echo "Hello ${params.NAME}!"
+                echo "You description ${params.DESCRIPTION}!"
+                echo "that is ${params.SLAVE} orchestration!"
+                echo "Need to deploy: ${params.DEPLOY} to deploy!"
+                echo "You secret is ${params.SECRET}!"
+            }
+
+        }
 
         stage('Prepare') {
 

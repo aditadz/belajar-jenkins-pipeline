@@ -14,6 +14,10 @@ pipeline {
     stages {
 
         stage('Prepare') {
+
+            environment {
+                APP = credentials("adit rahasia")
+            }
             agent {
                  node {
                     label "linux && java11"
@@ -25,6 +29,8 @@ pipeline {
                 echo ("Start Job  : ${env.JOB_NAME}")
                 echo ("Start Build  : ${env.BUILD_NUMBER}")
                 echo ("Branch Name  : ${env.BRANCH_NAME}")
+                echo ("App user : ${APP_USR}")
+                echo ("App password : ${APP_PSW}")
             }
         }
 

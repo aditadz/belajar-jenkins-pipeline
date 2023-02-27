@@ -16,7 +16,7 @@ pipeline {
         stage('Prepare') {
 
             environment {
-                APP = credentials("adit rahasia")
+                APP = credentials("adit_rahasia")
             }
             agent {
                  node {

@@ -1,12 +1,18 @@
 pipeline {
-    agent {
-        node {
-            label "linux && java11"
-        }
-    }
+    agent none
+    // agent {
+    //     node {
+    //         label "linux && java11"
+    //     }
+    // }
 
     stages {
         stage('Build') {
+            agent {
+                 node {
+                    label "linux && java11"
+                  }
+                 }
             steps {
 
                 script {
@@ -22,7 +28,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                
+                agent {
+                 node {
+                    label "linux && java11"
+                  }
+                 }
                 script {
                     def data = [
                         "firstName": "Adit",
@@ -36,6 +46,11 @@ pipeline {
             }
         }
          stage('Deploy') {
+            agent {
+                 node {
+                    label "linux && java11"
+                  }
+                 }
             steps {
                 echo 'Deploying Maven Apps'
                 sleep(5)

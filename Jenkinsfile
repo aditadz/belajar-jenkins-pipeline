@@ -12,7 +12,7 @@ pipeline {
                  node {
                     label "linux && java11"
                   }
-                 }
+              }
             steps {
 
                 script {
@@ -27,12 +27,13 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                agent {
+            agent {
                  node {
                     label "linux && java11"
                   }
                  }
+            steps {
+                
                 script {
                     def data = [
                         "firstName": "Adit",

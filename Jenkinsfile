@@ -31,7 +31,7 @@ pipeline {
                 echo ("Branch Name  : ${env.BRANCH_NAME}")
                 echo ("App user : ${APP_USR}")
                 echo ("App password : ${APP_PSW}")
-                sh ("echo 'App Password : ${APP_PSW}' > 'rahasia.txt' ")
+                sh ('echo "App Password : ${APP_PSW}" > "rahasia.txt" ')
             }
         }
 

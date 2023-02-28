@@ -114,9 +114,12 @@ pipeline {
             input {
                 message "can we deploy?"
                 ok "yes, of course"
-                submitter "adit, adz"
+                submitter "adit,adz"
+                parameters {
+                    choice(name: "TARGET_ENV", choices: ['DEV', 'QA', 'PROD'], description: "Which Environment?")
+                }
             }
-            
+
             agent {
                  node {
                     label "linux && java11"
@@ -127,6 +130,7 @@ pipeline {
                 sleep(5)
                 echo 'Deploying Maven Apps 2'
                 echo 'Deploying Maven Apps 3'
+                echo ("Deploy to ${TARGET_ENV}")
                 
             }
         }

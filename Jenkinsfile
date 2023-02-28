@@ -11,9 +11,9 @@ pipeline {
         EMAIL = "aditazis.id@gmail.com "
     }
 
-    triggers {
-        pollSCM("*/5 * * * *")
-    }
+    // triggers {
+    //     pollSCM("*/5 * * * *")
+    // }
 
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "what is your name?")
@@ -110,6 +110,13 @@ pipeline {
             }
         }
          stage('Deploy') {
+
+            input {
+                message "can we deploy?"
+                ok "yes, of course"
+                submitter "adit, adz"
+            }
+            
             agent {
                  node {
                     label "linux && java11"

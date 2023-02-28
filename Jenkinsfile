@@ -38,10 +38,11 @@ pipeline {
                   }
               }
               stages {
-                stage("Prepare Java")
+                stage("Prepare Java"){
                     steps{
                         echo ("prepare java")
                     }
+                }
 
                     stage("prepare maven") {
                 steps {

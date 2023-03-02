@@ -43,8 +43,8 @@ pipeline {
                         values "32", "64"
                     }
                 }
-            }
 
+                
             stages{
                 
                 stage("OS Setup"){
@@ -58,6 +58,8 @@ pipeline {
               }
                 } 
             }
+            }
+
 
         }
 

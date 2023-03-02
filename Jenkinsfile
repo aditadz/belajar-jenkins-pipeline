@@ -33,7 +33,7 @@ pipeline {
 
         stage ('Preparation') {
             agent {
-                 node {
+                 node { 
                     label "linux && java11"
                   }
               }
@@ -41,12 +41,14 @@ pipeline {
                 stage("Prepare Java"){
                     steps{
                         echo ("prepare java")
+                        sleep(5)
                     }
                 }
 
                     stage("prepare maven") {
                 steps {
                     echo("prepare maven")
+                    sleep(5)
                 }
               }
               }

@@ -233,7 +233,7 @@ pipeline {
                 withCredentials([usernamePassword(
                     credentialsId: "adit_rahasia",
                     usernameVariable: "USER",
-                    passwordVarible: "PASSWORD"
+                    passwordVariable: "PASSWORD"
                 )]){
                     sh ('echo "Release it with -u $USER -P $PASSWORD" > "release.txt"')
                 }
